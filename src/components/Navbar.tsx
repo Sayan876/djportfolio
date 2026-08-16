@@ -15,7 +15,7 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Services", href: "#experience" },
+    { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#home" },
   ];
@@ -41,7 +41,7 @@ const Navbar = () => {
             onClick={handleNavClick}
             className="shrink-0 text-xl font-bold tracking-tight text-slate-950 transition-colors dark:text-white"
           >
-            DJ Sujoy
+              Sujay
             <span className="text-blue-600 dark:text-blue-400">
               Rout
             </span>

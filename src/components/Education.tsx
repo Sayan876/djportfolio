@@ -5,12 +5,14 @@ import {
   BadgeCheck,
 } from "lucide-react";
 
+import { motion } from "framer-motion";
+
 const Education = () => {
   const education = [
     {
       degree: "B.Tech – Computer Science & Engineering",
-      institute: "Birbhum Institute of Engineering & Technology",
-      board: "MAKAUT",
+      institute: "Maulana Abul Kalam Azad University of Technology",
+      board: "",
       year: "2022 – 2025",
       grade: "GPA: 6.88/10",
     },
@@ -54,7 +56,16 @@ const Education = () => {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* Heading */}
-        <div className="max-w-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
+          className="max-w-2xl"
+        >
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
             Education & Certifications
           </p>
@@ -70,11 +81,31 @@ const Education = () => {
             Academic foundations combined with industry-focused certifications
             across IT support, cybersecurity, and endpoint management.
           </p>
-        </div>
+        </motion.div>
 
         {/* Education */}
-        <div className="mt-14">
-          <div className="mb-6 flex items-center gap-3">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.1,
+            ease: "easeOut",
+          }}
+          className="mt-14"
+        >
+          {/* Education Header */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+            }}
+            className="mb-6 flex items-center gap-3"
+          >
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400">
               <GraduationCap size={19} strokeWidth={1.8} />
             </div>
@@ -82,13 +113,48 @@ const Education = () => {
             <h3 className="text-lg font-semibold">
               Education
             </h3>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-5 lg:grid-cols-2">
+          {/* Education Cards */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+            className="grid gap-5 lg:grid-cols-2"
+          >
             {education.map((item) => (
-              <article
+              <motion.article
                 key={item.degree}
-                className="rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20 sm:p-7"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 30,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.6,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+                whileHover={{
+                  y: -5,
+                  transition: {
+                    duration: 0.25,
+                    ease: "easeOut",
+                  },
+                }}
+                className="rounded-2xl border border-border bg-background p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20 sm:p-7"
               >
                 <div className="flex flex-col gap-5">
 
@@ -101,9 +167,11 @@ const Education = () => {
                       {item.institute}
                     </p>
 
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {item.board}
-                    </p>
+                    {item.board && (
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {item.board}
+                      </p>
+                    )}
                   </div>
 
                   <div className="flex flex-wrap items-center gap-4 border-t border-border pt-4">
@@ -118,14 +186,33 @@ const Education = () => {
                   </div>
 
                 </div>
-              </article>
+              </motion.article>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Certifications */}
-        <div className="mt-16">
-          <div className="mb-6 flex items-center gap-3">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+          className="mt-16"
+        >
+          {/* Certifications Header */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+            }}
+            className="mb-6 flex items-center gap-3"
+          >
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400">
               <Award size={19} strokeWidth={1.8} />
             </div>
@@ -133,20 +220,68 @@ const Education = () => {
             <h3 className="text-lg font-semibold">
               Certifications
             </h3>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Certification Cards */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {certifications.map((certification) => (
-              <article
+              <motion.article
                 key={certification.title}
-                className="group rounded-2xl border border-border bg-background p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 25,
+                    scale: 0.98,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.5,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+                whileHover={{
+                  y: -4,
+                  transition: {
+                    duration: 0.25,
+                    ease: "easeOut",
+                  },
+                }}
+                className="group rounded-2xl border border-border bg-background p-5 transition-shadow duration-300 hover:shadow-md"
               >
                 <div className="flex gap-4">
-                  <BadgeCheck
-                    size={20}
-                    className="mt-0.5 shrink-0 text-blue-600 dark:text-blue-400"
-                    strokeWidth={1.8}
-                  />
+
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: 3,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                    }}
+                  >
+                    <BadgeCheck
+                      size={20}
+                      className="mt-0.5 shrink-0 text-blue-600 dark:text-blue-400"
+                      strokeWidth={1.8}
+                    />
+                  </motion.div>
 
                   <div>
                     <h4 className="text-sm font-semibold leading-6">
@@ -157,11 +292,12 @@ const Education = () => {
                       {certification.issuer}
                     </p>
                   </div>
+
                 </div>
-              </article>
+              </motion.article>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
       </div>
     </section>

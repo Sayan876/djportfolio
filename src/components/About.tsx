@@ -1,8 +1,8 @@
 import {
   Headphones,
-  ShieldCheck,
-  Network,
+  Server,
   TicketCheck,
+  Network,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -13,154 +13,226 @@ const About = () => {
       icon: Headphones,
       title: "End-User Support",
       description:
-        "Resolving hardware, software, OS, and application issues while maintaining a reliable user experience.",
+        "Hardware, software, operating system, and application troubleshooting.",
     },
     {
-      icon: ShieldCheck,
+      icon: Server,
       title: "System Administration",
       description:
-        "Managing Active Directory, user accounts, access permissions, password resets, and endpoint environments.",
+        "Active Directory, user accounts, access management, and endpoint support.",
     },
     {
       icon: TicketCheck,
       title: "IT Service Management",
       description:
-        "Handling incidents, service requests, escalations, SLA compliance, and ticket lifecycle management.",
+        "Incident, service request, SLA, escalation, and service desk management.",
     },
     {
       icon: Network,
-      title: "Network Troubleshooting",
+      title: "Network Support",
       description:
-        "Troubleshooting LAN/WAN, TCP/IP, DNS, DHCP, VPN, proxy, and basic firewall-related issues.",
+        "TCP/IP, DNS, DHCP, LAN/WAN, VPN, and proxy troubleshooting.",
     },
   ];
 
   return (
     <section
       id="about"
-      className="bg-muted/30 py-24 text-foreground transition-colors duration-500 sm:py-28"
+      className="bg-background py-24 text-foreground transition-colors duration-500 sm:py-28"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="max-w-2xl"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
+          className="max-w-3xl"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
-            About
+            About Me
           </p>
 
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Supporting people.
+            Supporting People.
             <span className="block text-muted-foreground">
-              Supporting technology.
+              Supporting Technology.
             </span>
           </h2>
+
+          <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+            IT Service Desk and Technical Support professional focused on
+            helping people solve technical problems and keeping enterprise
+            technology environments reliable, secure, and productive.
+          </p>
+
+          <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+            Experienced in end-user support, incident management, user access
+            administration, endpoint management, technical troubleshooting,
+            and working within SLA-driven environments.
+          </p>
         </motion.div>
 
-        {/* Introduction */}
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
-
-          {/* Main Statement */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 0.7,
-              delay: 0.1,
-              ease: "easeOut",
-            }}
-          >
-            <p className="text-lg font-medium leading-8">
-              An IT Service Desk and Technical Support professional focused on
-              keeping users, systems, and IT operations running smoothly.
-            </p>
-          </motion.div>
-
-          {/* Description */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 0.7,
-              delay: 0.2,
-              ease: "easeOut",
-            }}
-            className="space-y-5 text-sm leading-7 text-muted-foreground sm:text-base"
-          >
-            <p>
-              Experienced in enterprise IT support environments with hands-on
-              exposure to incident management, system administration, user
-              access management, endpoint management, and technical
-              troubleshooting.
-            </p>
-
-            <p>
-              Comfortable working in SLA-driven environments, diagnosing
-              technical issues, maintaining accurate documentation, and
-              collaborating across support levels to deliver reliable
-              solutions.
-            </p>
-          </motion.div>
-
-        </div>
-
-        {/* Expertise Grid */}
+        {/* Core Expertise */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
           transition={{
             duration: 0.7,
-            delay: 0.2,
+            delay: 0.1,
             ease: "easeOut",
           }}
-          className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-14"
         >
-          {expertise.map((item, index) => {
-            const Icon = item.icon;
+          {/* Heading */}
+          <div className="mb-7">
+            <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+              Core Expertise
+            </p>
+          </div>
 
-            return (
+          {/* Expertise Cards */}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {expertise.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.article
+                  key={item.title}
+                  initial={{
+                    opacity: 0,
+                    y: 35,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.15,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{
+                    y: -6,
+                  }}
+                  className="group rounded-2xl border border-border bg-card p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20"
+                >
+                  {/* Icon */}
+                  <motion.div
+                    whileHover={{
+                      scale: 1.08,
+                      rotate: 3,
+                    }}
+                    transition={{
+                      duration: 0.25,
+                      ease: "easeOut",
+                    }}
+                    className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400"
+                  >
+                    <Icon
+                      size={21}
+                      strokeWidth={1.7}
+                    />
+                  </motion.div>
+
+                  {/* Title */}
+                  <h3 className="mt-6 text-sm font-semibold tracking-tight">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {item.description}
+                  </p>
+                </motion.article>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Professional Strengths */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+          className="mt-12 rounded-2xl border border-border bg-muted/30 p-6 sm:p-8"
+        >
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              "Enterprise IT Support",
+              "Technical Troubleshooting",
+              "SLA-driven Environment",
+              "Cross-functional Collaboration",
+            ].map((strength, index) => (
               <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                key={strength}
+                initial={{
+                  opacity: 0,
+                  x: -15,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
                 transition={{
                   duration: 0.5,
-                  delay: index * 0.1,
+                  delay: index * 0.08,
                   ease: "easeOut",
                 }}
-                whileHover={{ y: -4 }}
-                className="group bg-background p-6 transition-colors duration-300 hover:bg-muted/60"
+                className="flex items-center gap-3"
               >
-                {/* Icon */}
-                <motion.div
-                  whileHover={{ scale: 1.08, rotate: 3 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400"
-                >
-                  <Icon size={20} strokeWidth={1.8} />
-                </motion.div>
+                <span className="h-2 w-2 shrink-0 rounded-full bg-blue-600 dark:bg-blue-400" />
 
-                {/* Title */}
-                <h3 className="mt-6 text-base font-semibold">
-                  {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {item.description}
-                </p>
+                <span className="text-sm font-medium text-muted-foreground">
+                  {strength}
+                </span>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </motion.div>
 
       </div>
