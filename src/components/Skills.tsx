@@ -182,7 +182,8 @@ const Skills = () => {
       className="bg-muted/30 py-24 text-foreground transition-colors duration-500 sm:py-28"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        {/* Heading */}
+
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,39 +210,23 @@ const Skills = () => {
         </motion.div>
 
         {/* Skills Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.08,
-              },
-            },
-          }}
-          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {skills.map((item) => {
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {skills.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <motion.article
                 key={item.title}
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 35,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.6,
-                      ease: "easeOut",
-                    },
-                  },
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{
+                  once: true,
+                  amount: 0.05,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: Math.min(index * 0.04, 0.25),
+                  ease: "easeOut",
                 }}
                 whileHover={{
                   y: -6,
@@ -279,24 +264,9 @@ const Skills = () => {
 
                 {/* Skill Tags */}
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {item.skills.map((skill, index) => (
+                  {item.skills.map((skill) => (
                     <motion.span
                       key={skill}
-                      initial={{
-                        opacity: 0,
-                        scale: 0.9,
-                      }}
-                      whileInView={{
-                        opacity: 1,
-                        scale: 1,
-                      }}
-                      viewport={{
-                        once: true,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        delay: index * 0.04,
-                      }}
                       whileHover={{
                         y: -2,
                       }}
@@ -309,7 +279,8 @@ const Skills = () => {
               </motion.article>
             );
           })}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );
