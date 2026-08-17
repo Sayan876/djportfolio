@@ -114,7 +114,7 @@ const Hero = () => {
 
               {/* WhatsApp */}
                 <a
-                  href="https://wa.me/916296371824"
+                  href="https://wa.me/+918372024858"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 transition-colors hover:text-green-600 dark:hover:text-green-400"
