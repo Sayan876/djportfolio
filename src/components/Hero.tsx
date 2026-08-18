@@ -11,7 +11,7 @@ import {
 import { motion } from "framer-motion";
 
 import profilePhoto from "../assets/sujoy.png";
-import resume from "../assets/SUJAY_ROUT_Resume.pdf";
+//import resume from "../assets/SUJAY_ROUT_Resume.pdf";
 
 const Hero = () => {
   return (
