@@ -55,7 +55,151 @@ const Hero = () => {
       </div>
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="grid min-h-[calc(100vh-72px)] items-center gap-14 py-20 sm:py-24 lg:grid-cols-[1fr_auto] lg:gap-20 lg:py-24">
+        {/* ========================================================= */}
+        {/* Main Hero */}
+        {/* ========================================================= */}
+
+        <div className="flex min-h-[calc(100vh-72px)] flex-col items-center py-16 sm:py-20 lg:py-24">
+
+          {/* ===================================================== */}
+          {/* Professional Profile Photo — TOP */}
+          {/* ===================================================== */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -35,
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.9,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+            className="relative mb-12 flex items-center justify-center"
+          >
+            {/* Soft Glow */}
+
+            <motion.div
+              animate={{
+                scale: [1, 1.08, 1],
+                opacity: [0.2, 0.35, 0.2],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute h-72 w-72 rounded-full bg-blue-500/20 blur-3xl dark:bg-blue-400/20 sm:h-80 sm:w-80"
+            />
+
+            {/* Decorative Orbit */}
+
+            <motion.div
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                duration: 18,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="pointer-events-none absolute -inset-4 rounded-full border border-dashed border-blue-500/20 dark:border-blue-400/20 sm:-inset-5"
+            />
+
+            {/* Second subtle orbit */}
+
+            <motion.div
+              animate={{
+                rotate: -360,
+              }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="pointer-events-none absolute -inset-7 rounded-full border border-blue-500/10 dark:border-blue-400/10"
+            />
+
+            {/* Gradient Ring */}
+
+            <motion.div
+              whileHover={{
+                scale: 1.04,
+              }}
+              transition={{
+                duration: 0.35,
+                ease: "easeOut",
+              }}
+              className="relative rounded-full bg-gradient-to-br from-blue-500 via-blue-400 to-cyan-400 p-[3px] shadow-2xl shadow-blue-500/20 dark:shadow-blue-400/20"
+            >
+              {/* Photo */}
+
+              <div className="relative h-52 w-52 overflow-hidden rounded-full border-4 border-background bg-muted sm:h-60 sm:w-60 lg:h-64 lg:w-64">
+                <img
+                  src={profilePhoto}
+                  alt="Sujay Rout"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                />
+
+                {/* Subtle Overlay */}
+
+                <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-t from-black/10 via-transparent to-white/10" />
+              </div>
+            </motion.div>
+
+            {/* Status Indicator */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 1,
+                ease: "backOut",
+              }}
+              className="absolute -bottom-1 -right-1 flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-500/20 bg-background/90 shadow-lg backdrop-blur-md dark:border-blue-400/20 sm:-bottom-2 sm:-right-2 sm:h-14 sm:w-14"
+            >
+              <motion.span
+                animate={{
+                  scale: [1, 1.25, 1],
+                  opacity: [1, 0.7, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="h-3 w-3 rounded-full bg-green-500 shadow-lg shadow-green-500/40"
+              />
+            </motion.div>
+
+            {/* Small Floating Accent */}
+
+            <motion.div
+              animate={{
+                y: [0, -8, 0],
+                rotate: [0, 4, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -left-3 top-8 h-8 w-8 rounded-xl border border-blue-500/20 bg-background/80 backdrop-blur-sm dark:border-blue-400/20"
+            />
+          </motion.div>
 
           {/* ===================================================== */}
           {/* Main Content */}
@@ -64,19 +208,21 @@ const Hero = () => {
           <motion.div
             initial={{
               opacity: 0,
-              x: -40,
+              y: 30,
             }}
             animate={{
               opacity: 1,
-              x: 0,
+              y: 0,
             }}
             transition={{
               duration: 0.8,
+              delay: 0.35,
               ease: "easeOut",
             }}
-            className="max-w-4xl"
+            className="w-full max-w-4xl text-center"
           >
             {/* Small Label */}
+
             <motion.div
               initial={{
                 opacity: 0,
@@ -88,7 +234,7 @@ const Hero = () => {
               }}
               transition={{
                 duration: 0.6,
-                delay: 0.1,
+                delay: 0.45,
               }}
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-3.5 py-1.5 text-xs font-medium text-muted-foreground"
             >
@@ -98,6 +244,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Name */}
+
             <motion.h1
               initial={{
                 opacity: 0,
@@ -109,7 +256,7 @@ const Hero = () => {
               }}
               transition={{
                 duration: 0.7,
-                delay: 0.2,
+                delay: 0.5,
               }}
               className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
             >
@@ -120,6 +267,7 @@ const Hero = () => {
             </motion.h1>
 
             {/* Professional Title */}
+
             <motion.h2
               initial={{
                 opacity: 0,
@@ -131,14 +279,15 @@ const Hero = () => {
               }}
               transition={{
                 duration: 0.7,
-                delay: 0.3,
+                delay: 0.6,
               }}
-              className="mt-5 max-w-3xl text-xl font-medium leading-8 text-muted-foreground sm:text-2xl"
+              className="mx-auto mt-5 max-w-3xl text-xl font-medium leading-8 text-muted-foreground sm:text-2xl"
             >
               IT Service Desk & Technical Support Professional
             </motion.h2>
 
             {/* Career Summary */}
+
             <motion.p
               initial={{
                 opacity: 0,
@@ -150,9 +299,9 @@ const Hero = () => {
               }}
               transition={{
                 duration: 0.7,
-                delay: 0.4,
+                delay: 0.7,
               }}
-              className="mt-6 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+              className="mx-auto mt-6 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
             >
               IT support professional with 2+ years of experience in
               end-user support, incident management, user access management,
@@ -176,11 +325,12 @@ const Hero = () => {
               }}
               transition={{
                 duration: 0.7,
-                delay: 0.5,
+                delay: 0.8,
               }}
-              className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground"
+              className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
             >
               {/* Phone */}
+
               <a
                 href="tel:+916296371824"
                 className="group inline-flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
@@ -195,6 +345,7 @@ const Hero = () => {
               </a>
 
               {/* WhatsApp */}
+
               <a
                 href="https://wa.me/+918372024858"
                 target="_blank"
@@ -211,6 +362,7 @@ const Hero = () => {
               </a>
 
               {/* Email */}
+
               <a
                 href="mailto:sujayrout.cs@gmail.com"
                 className="group inline-flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
@@ -225,6 +377,7 @@ const Hero = () => {
               </a>
 
               {/* Location */}
+
               <span className="inline-flex items-center gap-2">
                 <MapPin
                   size={16}
@@ -251,11 +404,12 @@ const Hero = () => {
               }}
               transition={{
                 duration: 0.7,
-                delay: 0.6,
+                delay: 0.9,
               }}
-              className="mt-9 flex flex-wrap items-center gap-3"
+              className="mt-9 flex flex-wrap items-center justify-center gap-3"
             >
               {/* View Experience */}
+
               <motion.a
                 href="#experience"
                 whileHover={{
@@ -275,6 +429,7 @@ const Hero = () => {
               </motion.a>
 
               {/* Download Resume */}
+
               <motion.a
                 href="#resume"
                 whileHover={{
@@ -311,7 +466,7 @@ const Hero = () => {
               }}
               transition={{
                 duration: 0.7,
-                delay: 0.8,
+                delay: 1.05,
               }}
               className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
             >
@@ -320,133 +475,11 @@ const Hero = () => {
               <ArrowUpRight size={15} />
             </motion.a>
           </motion.div>
-
-          {/* ===================================================== */}
-          {/* Professional Profile Photo */}
-          {/* ===================================================== */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 40,
-              scale: 0.9,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.9,
-              delay: 0.3,
-              ease: "easeOut",
-            }}
-            className="mx-auto lg:mx-0"
-          >
-            <div className="relative flex items-center justify-center">
-
-              {/* Soft Glow */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.08, 1],
-                  opacity: [0.2, 0.35, 0.2],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute h-80 w-80 rounded-full bg-blue-500/20 blur-3xl dark:bg-blue-400/20"
-              />
-
-              {/* Decorative Orbit */}
-              <motion.div
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 18,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="pointer-events-none absolute -inset-4 rounded-full border border-dashed border-blue-500/20 dark:border-blue-400/20"
-              />
-
-              {/* Gradient Ring */}
-              <motion.div
-                whileHover={{
-                  scale: 1.04,
-                }}
-                transition={{
-                  duration: 0.35,
-                  ease: "easeOut",
-                }}
-                className="relative rounded-full bg-gradient-to-br from-blue-500 via-blue-400 to-cyan-400 p-[3px] shadow-2xl shadow-blue-500/20 dark:shadow-blue-400/20"
-              >
-                {/* Photo */}
-                <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-background bg-muted sm:h-72 sm:w-72 lg:h-80 lg:w-80">
-                  <img
-                    src={profilePhoto}
-                    alt="Sujay Rout"
-                    className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
-                  />
-
-                  {/* Subtle Overlay */}
-                  <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-t from-black/10 via-transparent to-white/10" />
-                </div>
-              </motion.div>
-
-              {/* Status Indicator */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  scale: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1,
-                  ease: "backOut",
-                }}
-                className="absolute -bottom-2 -right-2 flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-500/20 bg-background/90 shadow-lg backdrop-blur-md dark:border-blue-400/20"
-              >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.25, 1],
-                    opacity: [1, 0.7, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="h-3 w-3 rounded-full bg-green-500 shadow-lg shadow-green-500/40"
-                />
-              </motion.div>
-
-              {/* Small Floating Accent */}
-              <motion.div
-                animate={{
-                  y: [0, -8, 0],
-                  rotate: [0, 4, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -left-3 top-10 h-8 w-8 rounded-xl border border-blue-500/20 bg-background/80 backdrop-blur-sm dark:border-blue-400/20"
-              />
-            </div>
-          </motion.div>
         </div>
 
-        {/* ===================================================== */}
+        {/* ========================================================= */}
         {/* Scroll Indicator */}
-        {/* ===================================================== */}
+        {/* ========================================================= */}
 
         <motion.div
           initial={{
@@ -457,7 +490,7 @@ const Hero = () => {
           }}
           transition={{
             duration: 0.8,
-            delay: 1,
+            delay: 1.2,
           }}
           className="flex justify-center pb-8"
         >
