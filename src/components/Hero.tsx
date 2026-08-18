@@ -179,8 +179,7 @@ const Hero = () => {
 
               {/* Download Resume */}
               <motion.a
-                href={resume}
-                download="Sujay-Rout-Resume.pdf"
+                href="#resume"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="group inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium transition-all hover:border-blue-500 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400"
