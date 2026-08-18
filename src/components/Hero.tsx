@@ -59,7 +59,7 @@ const Hero = () => {
         {/* Main Hero */}
         {/* ========================================================= */}
 
-        <div className="flex min-h-[calc(100vh-72px)] flex-col items-center py-16 sm:py-20 lg:py-24">
+        <div className="flex flex-col items-center py-12 sm:py-16 lg:py-20">
 
           {/* ===================================================== */}
           {/* Professional Profile Photo — TOP */}
