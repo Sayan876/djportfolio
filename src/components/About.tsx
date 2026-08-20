@@ -14,24 +14,40 @@ const About = () => {
       title: "End-User Support",
       description:
         "Hardware, software, operating system, and application troubleshooting.",
+      iconColor:
+        "text-blue-600 bg-blue-600/10 dark:text-blue-400 dark:bg-blue-400/10",
+      hoverColor:
+        "group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-400 dark:group-hover:text-slate-950",
     },
     {
       icon: Server,
       title: "System Administration",
       description:
         "Active Directory, user accounts, access management, and endpoint support.",
+      iconColor:
+        "text-violet-600 bg-violet-600/10 dark:text-violet-400 dark:bg-violet-400/10",
+      hoverColor:
+        "group-hover:bg-violet-600 group-hover:text-white dark:group-hover:bg-violet-400 dark:group-hover:text-slate-950",
     },
     {
       icon: TicketCheck,
       title: "IT Service Management",
       description:
         "Incident, service request, SLA, escalation, and service desk management.",
+      iconColor:
+        "text-emerald-600 bg-emerald-600/10 dark:text-emerald-400 dark:bg-emerald-400/10",
+      hoverColor:
+        "group-hover:bg-emerald-600 group-hover:text-white dark:group-hover:bg-emerald-400 dark:group-hover:text-slate-950",
     },
     {
       icon: Network,
       title: "Network Support",
       description:
         "TCP/IP, DNS, DHCP, LAN/WAN, VPN, and proxy troubleshooting.",
+      iconColor:
+        "text-orange-600 bg-orange-600/10 dark:text-orange-400 dark:bg-orange-400/10",
+      hoverColor:
+        "group-hover:bg-orange-600 group-hover:text-white dark:group-hover:bg-orange-400 dark:group-hover:text-slate-950",
     },
   ];
 
@@ -147,19 +163,30 @@ const About = () => {
                   {/* Icon */}
                   <motion.div
                     whileHover={{
-                      scale: 1.08,
-                      rotate: 3,
+                      scale: 1.12,
+                      rotate: -4,
                     }}
                     transition={{
                       duration: 0.25,
                       ease: "easeOut",
                     }}
-                    className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400"
+                    className={`flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 ${item.iconColor} ${item.hoverColor}`}
                   >
-                    <Icon
-                      size={21}
-                      strokeWidth={1.7}
-                    />
+                    <motion.div
+                      whileHover={{
+                        rotate: 8,
+                        scale: 1.08,
+                      }}
+                      transition={{
+                        duration: 0.2,
+                        ease: "easeOut",
+                      }}
+                    >
+                      <Icon
+                        size={21}
+                        strokeWidth={1.7}
+                      />
+                    </motion.div>
                   </motion.div>
 
                   {/* Title */}
