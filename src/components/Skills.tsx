@@ -29,6 +29,8 @@ const Skills = () => {
         "Software Support",
         "Technical Troubleshooting",
       ],
+      iconStyle:
+        "bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400",
     },
     {
       icon: Users,
@@ -42,6 +44,8 @@ const Skills = () => {
         "Password Management",
         "Account Unlock",
       ],
+      iconStyle:
+        "bg-violet-600/10 text-violet-600 dark:bg-violet-400/10 dark:text-violet-400",
     },
     {
       icon: TicketCheck,
@@ -55,6 +59,8 @@ const Skills = () => {
         "ITIL Processes",
         "L2/L3 Escalation",
       ],
+      iconStyle:
+        "bg-amber-600/10 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400",
     },
     {
       icon: Network,
@@ -69,6 +75,8 @@ const Skills = () => {
         "VPN",
         "Proxy Configuration",
       ],
+      iconStyle:
+        "bg-cyan-600/10 text-cyan-600 dark:bg-cyan-400/10 dark:text-cyan-400",
     },
     {
       icon: ShieldCheck,
@@ -82,6 +90,8 @@ const Skills = () => {
         "Endpoint Security",
         "Vulnerability Remediation",
       ],
+      iconStyle:
+        "bg-emerald-600/10 text-emerald-600 dark:bg-emerald-400/10 dark:text-emerald-400",
     },
     {
       icon: Laptop,
@@ -95,6 +105,8 @@ const Skills = () => {
         "System Readiness",
         "Enterprise Support",
       ],
+      iconStyle:
+        "bg-indigo-600/10 text-indigo-600 dark:bg-indigo-400/10 dark:text-indigo-400",
     },
     {
       icon: Settings2,
@@ -108,6 +120,8 @@ const Skills = () => {
         "System Configuration",
         "Remote Support",
       ],
+      iconStyle:
+        "bg-orange-600/10 text-orange-600 dark:bg-orange-400/10 dark:text-orange-400",
     },
     {
       icon: LockKeyhole,
@@ -121,6 +135,8 @@ const Skills = () => {
         "Security Patching",
         "Endpoint Controls",
       ],
+      iconStyle:
+        "bg-rose-600/10 text-rose-600 dark:bg-rose-400/10 dark:text-rose-400",
     },
     {
       icon: FileText,
@@ -134,6 +150,8 @@ const Skills = () => {
         "Audit Records",
         "Technical Documentation",
       ],
+      iconStyle:
+        "bg-teal-600/10 text-teal-600 dark:bg-teal-400/10 dark:text-teal-400",
     },
     {
       icon: GitBranch,
@@ -147,6 +165,8 @@ const Skills = () => {
         "Root Cause Support",
         "Cross-team Coordination",
       ],
+      iconStyle:
+        "bg-fuchsia-600/10 text-fuchsia-600 dark:bg-fuchsia-400/10 dark:text-fuchsia-400",
     },
     {
       icon: UsersRound,
@@ -160,6 +180,8 @@ const Skills = () => {
         "InfoSec Coordination",
         "Cross-functional Collaboration",
       ],
+      iconStyle:
+        "bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400",
     },
     {
       icon: Wrench,
@@ -173,6 +195,8 @@ const Skills = () => {
         "Remote Support",
         "IT Service Tools",
       ],
+      iconStyle:
+        "bg-slate-600/10 text-slate-600 dark:bg-slate-400/10 dark:text-slate-400",
     },
   ];
 
@@ -217,8 +241,14 @@ const Skills = () => {
             return (
               <motion.article
                 key={item.title}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: 25,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
                 viewport={{
                   once: true,
                   amount: 0.05,
@@ -240,16 +270,19 @@ const Skills = () => {
                 {/* Icon */}
                 <motion.div
                   whileHover={{
-                    scale: 1.08,
-                    rotate: 2,
+                    scale: 1.1,
+                    rotate: 4,
                   }}
                   transition={{
                     duration: 0.25,
                     ease: "easeOut",
                   }}
-                  className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400"
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 group-hover:shadow-md ${item.iconStyle}`}
                 >
-                  <Icon size={21} strokeWidth={1.7} />
+                  <Icon
+                    size={21}
+                    strokeWidth={1.7}
+                  />
                 </motion.div>
 
                 {/* Title */}
@@ -269,8 +302,13 @@ const Skills = () => {
                       key={skill}
                       whileHover={{
                         y: -2,
+                        scale: 1.02,
                       }}
-                      className="rounded-full border border-border bg-muted/50 px-3 py-1.5 text-xs font-medium text-muted-foreground"
+                      transition={{
+                        duration: 0.2,
+                        ease: "easeOut",
+                      }}
+                      className="rounded-full border border-border bg-muted/50 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors duration-200 hover:border-foreground/20 hover:text-foreground"
                     >
                       {skill}
                     </motion.span>
