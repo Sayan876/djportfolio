@@ -305,7 +305,7 @@ const Experience = () => {
                     </h3>
 
                     <p className="mt-1 text-sm font-medium text-muted-foreground">
-                      IT Service Desk Engineer
+                      IT Service Desk Engineer | Technical Support Engineer
                     </p>
                   </div>
                 </motion.div>
