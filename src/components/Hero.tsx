@@ -55,14 +55,294 @@ const Hero = () => {
       </div>
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
         {/* ========================================================= */}
         {/* Main Hero */}
         {/* ========================================================= */}
 
-        <div className="flex flex-col items-center py-12 sm:py-16 lg:py-20">
+        <div className="grid min-h-[calc(100vh-72px)] items-center gap-12 py-12 sm:py-16 lg:grid-cols-[1fr_auto] lg:gap-20 lg:py-20">
 
           {/* ===================================================== */}
-          {/* Professional Profile Photo — TOP */}
+          {/* MAIN CONTENT */}
+          {/* Mobile: BELOW PHOTO */}
+          {/* Desktop: LEFT SIDE */}
+          {/* ===================================================== */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0.35,
+              ease: "easeOut",
+            }}
+            className="order-2 w-full max-w-4xl text-center lg:order-1 lg:text-left"
+          >
+            {/* Small Label */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 15,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.45,
+              }}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-3.5 py-1.5 text-xs font-medium text-muted-foreground"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
+
+              IT Service Desk & Technical Support
+            </motion.div>
+
+            {/* Name */}
+
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+              }}
+              className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+            >
+              Sujay{" "}
+              <span className="text-blue-600 dark:text-blue-400">
+                Rout
+              </span>
+            </motion.h1>
+
+            {/* Professional Title */}
+
+            <motion.h2
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.6,
+              }}
+              className="mx-auto mt-5 max-w-3xl text-xl font-medium leading-8 text-muted-foreground sm:text-2xl lg:mx-0"
+            >
+              IT Service Desk & Technical Support Professional
+            </motion.h2>
+
+            {/* Career Summary */}
+
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.7,
+              }}
+              className="mx-auto mt-6 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 lg:mx-0"
+            >
+              IT support professional with 2+ years of experience in
+              end-user support, incident management, user access management,
+              and IT operations. Skilled in troubleshooting hardware,
+              software, Windows OS, Active Directory, Microsoft 365,
+              endpoint management, and ITIL-based service delivery.
+            </motion.p>
+
+            {/* ===================================================== */}
+            {/* Contact Information */}
+            {/* ===================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.8,
+              }}
+              className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground lg:justify-start"
+            >
+              {/* Phone */}
+
+              <a
+                href="tel:+916296371824"
+                className="group inline-flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                <Phone
+                  size={16}
+                  strokeWidth={1.8}
+                  className="text-blue-600 dark:text-blue-400"
+                />
+
+                <span>+91 6296371824</span>
+              </a>
+
+              {/* WhatsApp */}
+
+              <a
+                href="https://wa.me/+918372024858"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 transition-colors hover:text-green-600 dark:hover:text-green-400"
+              >
+                <MessageCircle
+                  size={16}
+                  strokeWidth={1.8}
+                  className="text-green-600 dark:text-green-400"
+                />
+
+                <span>WhatsApp</span>
+              </a>
+
+              {/* Email */}
+
+              <a
+                href="mailto:sujayrout.cs@gmail.com"
+                className="group inline-flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                <Mail
+                  size={16}
+                  strokeWidth={1.8}
+                  className="text-blue-600 dark:text-blue-400"
+                />
+
+                <span>sujayrout.cs@gmail.com</span>
+              </a>
+
+              {/* Location */}
+
+              <span className="inline-flex items-center gap-2">
+                <MapPin
+                  size={16}
+                  strokeWidth={1.8}
+                  className="text-blue-600 dark:text-blue-400"
+                />
+
+                <span>Kolkata, West Bengal</span>
+              </span>
+            </motion.div>
+
+            {/* ===================================================== */}
+            {/* Actions */}
+            {/* ===================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.9,
+              }}
+              className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
+            >
+              {/* View Experience */}
+
+              <motion.a
+                href="#experience"
+                whileHover={{
+                  y: -2,
+                }}
+                whileTap={{
+                  scale: 0.97,
+                }}
+                className="group inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-600 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-400"
+              >
+                View Experience
+
+                <ArrowUpRight
+                  size={16}
+                  className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </motion.a>
+
+              {/* Download Resume */}
+
+              <motion.a
+                href="#resume"
+                whileHover={{
+                  y: -2,
+                }}
+                whileTap={{
+                  scale: 0.97,
+                }}
+                className="group inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium transition-all hover:border-blue-500 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400"
+              >
+                Download Resume
+
+                <Download
+                  size={16}
+                  strokeWidth={1.8}
+                  className="transition-transform duration-200 group-hover:translate-y-0.5"
+                />
+              </motion.a>
+            </motion.div>
+
+            {/* ===================================================== */}
+            {/* LinkedIn */}
+            {/* ===================================================== */}
+
+            <motion.a
+              href="https://www.linkedin.com/in/sujay-rout"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 1.05,
+              }}
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              LinkedIn Profile
+
+              <ArrowUpRight size={15} />
+            </motion.a>
+          </motion.div>
+
+          {/* ===================================================== */}
+          {/* PROFESSIONAL PROFILE PHOTO */}
+          {/* Mobile: ABOVE TEXT */}
+          {/* Desktop: RIGHT SIDE */}
           {/* ===================================================== */}
 
           <motion.div
@@ -81,7 +361,7 @@ const Hero = () => {
               delay: 0.15,
               ease: "easeOut",
             }}
-            className="relative mb-12 flex items-center justify-center"
+            className="relative order-1 mx-auto flex items-center justify-center lg:order-2 lg:mx-0"
           >
             {/* Soft Glow */}
 
@@ -199,281 +479,6 @@ const Hero = () => {
               }}
               className="absolute -left-3 top-8 h-8 w-8 rounded-xl border border-blue-500/20 bg-background/80 backdrop-blur-sm dark:border-blue-400/20"
             />
-          </motion.div>
-
-          {/* ===================================================== */}
-          {/* Main Content */}
-          {/* ===================================================== */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.35,
-              ease: "easeOut",
-            }}
-            className="w-full max-w-4xl text-center"
-          >
-            {/* Small Label */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 15,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.45,
-              }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-3.5 py-1.5 text-xs font-medium text-muted-foreground"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
-
-              IT Service Desk & Technical Support
-            </motion.div>
-
-            {/* Name */}
-
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.5,
-              }}
-              className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
-            >
-              Sujay{" "}
-              <span className="text-blue-600 dark:text-blue-400">
-                Rout
-              </span>
-            </motion.h1>
-
-            {/* Professional Title */}
-
-            <motion.h2
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.6,
-              }}
-              className="mx-auto mt-5 max-w-3xl text-xl font-medium leading-8 text-muted-foreground sm:text-2xl"
-            >
-              IT Service Desk & Technical Support Professional
-            </motion.h2>
-
-            {/* Career Summary */}
-
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.7,
-              }}
-              className="mx-auto mt-6 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
-            >
-              IT support professional with 2+ years of experience in
-              end-user support, incident management, user access management,
-              and IT operations. Skilled in troubleshooting hardware,
-              software, Windows OS, Active Directory, Microsoft 365,
-              endpoint management, and ITIL-based service delivery.
-            </motion.p>
-
-            {/* ===================================================== */}
-            {/* Contact Information */}
-            {/* ===================================================== */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.8,
-              }}
-              className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
-            >
-              {/* Phone */}
-
-              <a
-                href="tel:+916296371824"
-                className="group inline-flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                <Phone
-                  size={16}
-                  strokeWidth={1.8}
-                  className="text-blue-600 dark:text-blue-400"
-                />
-
-                <span>+91 6296371824</span>
-              </a>
-
-              {/* WhatsApp */}
-
-              <a
-                href="https://wa.me/+918372024858"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 transition-colors hover:text-green-600 dark:hover:text-green-400"
-              >
-                <MessageCircle
-                  size={16}
-                  strokeWidth={1.8}
-                  className="text-green-600 dark:text-green-400"
-                />
-
-                <span>WhatsApp</span>
-              </a>
-
-              {/* Email */}
-
-              <a
-                href="mailto:sujayrout.cs@gmail.com"
-                className="group inline-flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                <Mail
-                  size={16}
-                  strokeWidth={1.8}
-                  className="text-blue-600 dark:text-blue-400"
-                />
-
-                <span>sujayrout.cs@gmail.com</span>
-              </a>
-
-              {/* Location */}
-
-              <span className="inline-flex items-center gap-2">
-                <MapPin
-                  size={16}
-                  strokeWidth={1.8}
-                  className="text-blue-600 dark:text-blue-400"
-                />
-
-                <span>Kolkata, West Bengal</span>
-              </span>
-            </motion.div>
-
-            {/* ===================================================== */}
-            {/* Actions */}
-            {/* ===================================================== */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.9,
-              }}
-              className="mt-9 flex flex-wrap items-center justify-center gap-3"
-            >
-              {/* View Experience */}
-
-              <motion.a
-                href="#experience"
-                whileHover={{
-                  y: -2,
-                }}
-                whileTap={{
-                  scale: 0.97,
-                }}
-                className="group inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-blue-600 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-400"
-              >
-                View Experience
-
-                <ArrowUpRight
-                  size={16}
-                  className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </motion.a>
-
-              {/* Download Resume */}
-
-              <motion.a
-                href="#resume"
-                whileHover={{
-                  y: -2,
-                }}
-                whileTap={{
-                  scale: 0.97,
-                }}
-                className="group inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium transition-all hover:border-blue-500 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400"
-              >
-                Download Resume
-
-                <Download
-                  size={16}
-                  strokeWidth={1.8}
-                  className="transition-transform duration-200 group-hover:translate-y-0.5"
-                />
-              </motion.a>
-            </motion.div>
-
-            {/* ===================================================== */}
-            {/* LinkedIn */}
-            {/* ===================================================== */}
-
-            <motion.a
-              href="https://www.linkedin.com/in/sujay-rout"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 1.05,
-              }}
-              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              LinkedIn Profile
-
-              <ArrowUpRight size={15} />
-            </motion.a>
           </motion.div>
         </div>
 
